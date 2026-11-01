@@ -50,6 +50,9 @@ yay -S mpvpaper            # живые обои (AUR)
 Режим экрана запоминается в `~/.config/hypr/display-mode`, его же можно сменить из терминала:
 `display-mode extend|mirror|toggle`. Имена выходов `HDMI-A-1` и `eDP-1` заданы в `hyprland.lua`.
 
+Если телевизор подключён, но система его вообще не видит (в логе ядра `No EDID read`), —
+см. [system/hdmi-edid](system/hdmi-edid/README.md): там обход и признаки, когда его ставить.
+
 ## Обои
 
 - `noire-night.png`, `noire-night-live.mp4` — сцена **Noire Night 4K** для Wallpaper Engine,
