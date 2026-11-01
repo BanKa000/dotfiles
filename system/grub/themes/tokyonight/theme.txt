@@ -1,0 +1,60 @@
+# Tokyo Night GRUB theme, matches hyprlock/sddm
+desktop-image: "background.png"
+desktop-color: "#1a1b26"
+title-text: ""
+terminal-font: "JetBrainsMono NF Regular 14"
+terminal-left: "10%"
+terminal-top: "10%"
+terminal-width: "80%"
+terminal-height: "80%"
+terminal-box: "terminal_box_*.png"
+
++ label {
+    top = 18%
+    left = 0
+    width = 100%
+    align = "center"
+    text = "Arch Linux"
+    font = "JetBrainsMono NF Bold 28"
+    color = "#c0caf5"
+}
+
++ boot_menu {
+    left = 30%
+    top = 32%
+    width = 40%
+    height = 42%
+    item_font = "JetBrainsMono NF Regular 18"
+    item_color = "#565f89"
+    selected_item_font = "JetBrainsMono NF Regular 18"
+    selected_item_color = "#7aa2f7"
+    selected_item_pixmap_style = "select_*.png"
+    item_height = 40
+    item_padding = 20
+    item_spacing = 6
+    icon_width = 0
+    icon_height = 0
+    item_icon_space = 0
+    scrollbar = false
+}
+
++ label {
+    id = "__timeout__"
+    top = 82%
+    left = 0
+    width = 100%
+    align = "center"
+    text = "загрузка через %d с"
+    font = "JetBrainsMono NF Regular 14"
+    color = "#565f89"
+}
+
++ label {
+    top = 92%
+    left = 0
+    width = 100%
+    align = "center"
+    text = "↑↓ выбор  •  Enter загрузка  •  e правка  •  c консоль"
+    font = "JetBrainsMono NF Regular 14"
+    color = "#414868"
+}

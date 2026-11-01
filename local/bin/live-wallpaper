@@ -1,0 +1,30 @@
+#!/bin/sh
+# live-wallpaper [on|off|toggle] — animated wallpaper via mpvpaper, static hyprpaper as fallback.
+VIDEO="$HOME/Pictures/wallpapers/noire-night-live.mp4"
+
+start_live() {
+    pkill -x hyprpaper
+    pkill -x mpvpaper
+    # -p / -a FULL: pause when the desktop is covered or a window is fullscreen (saves battery);
+    # hwdec: decode on the GPU
+    opts="no-audio loop hwdec=auto panscan=1.0"
+    # An overlay script next to the video (same name, .lua) is loaded into mpv, e.g. a live clock.
+    [ -f "${VIDEO%.*}.lua" ] && opts="$opts script=${VIDEO%.*}.lua"
+    setsid -f mpvpaper -p -a FULL -o "$opts" ALL "$VIDEO" >/dev/null 2>&1
+}
+
+start_static() {
+    pkill -x mpvpaper
+    pgrep -x hyprpaper >/dev/null || setsid -f hyprpaper >/dev/null 2>&1
+}
+
+case "${1:-on}" in
+    on)
+        if command -v mpvpaper >/dev/null && [ -f "$VIDEO" ]; then start_live; else start_static; fi ;;
+    off)
+        start_static ;;
+    toggle)
+        if pgrep -x mpvpaper >/dev/null; then start_static; else "$0" on; fi ;;
+    *)
+        echo "usage: live-wallpaper [on|off|toggle]" >&2; exit 1 ;;
+esac

@@ -1,0 +1,14 @@
+configuration {
+    modi:                "drun,run,window";
+    show-icons:          true;
+    icon-theme:          "breeze-dark";
+    display-drun:        "";
+    display-run:         "";
+    display-window:      "";
+    drun-display-format: "{name}";
+    matching:            "fuzzy";
+    sort:                true;
+    sorting-method:      "fzf";
+}
+
+@theme "~/.config/rofi/tokyonight.rasi"

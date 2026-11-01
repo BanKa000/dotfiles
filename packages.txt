@@ -1,0 +1,27 @@
+# Пакеты из официальных репозиториев (pacman -S --needed - < packages.txt)
+hyprland
+hyprlock
+hypridle
+hyprpaper
+waybar
+rofi
+dunst
+kitty
+dolphin
+breeze-icons
+ttf-jetbrains-mono-nerd
+brightnessctl
+wl-clipboard
+cliphist
+grim
+slurp
+playerctl
+wireplumber
+pavucontrol
+blueman
+libnotify
+imagemagick
+mpv
+polkit-kde-agent
+sddm
+grub

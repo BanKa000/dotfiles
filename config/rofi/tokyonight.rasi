@@ -1,0 +1,85 @@
+/* Tokyo Night, matches waybar */
+* {
+    bg:      rgba(26, 27, 38, 92%);
+    bg-alt:  #24283b;
+    fg:      #a9b1d6;
+    dim:     #565f89;
+    accent:  #7aa2f7;
+    purple:  #bb9af7;
+
+    font:             "JetBrainsMono Nerd Font 12";
+    background-color: transparent;
+    text-color:       @fg;
+    margin:           0;
+    padding:          0;
+    spacing:          0;
+}
+
+window {
+    width:            520px;
+    location:         center;
+    background-color: @bg;
+    border:           2px;
+    border-color:     @accent;
+    border-radius:    12px;
+}
+
+mainbox {
+    padding:  14px;
+    spacing:  12px;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    padding:          8px 12px;
+    spacing:          10px;
+    background-color: @bg-alt;
+    border-radius:    8px;
+    children:         [ prompt, entry ];
+}
+
+prompt {
+    text-color: @accent;
+}
+
+entry {
+    placeholder:       "Поиск…";
+    placeholder-color: @dim;
+    cursor:            text;
+}
+
+listview {
+    lines:        8;
+    columns:      1;
+    spacing:      4px;
+    fixed-height: true;
+    scrollbar:    false;
+    cycle:        true;
+}
+
+element {
+    padding:       7px 12px;
+    spacing:       12px;
+    border-radius: 8px;
+}
+
+element selected.normal {
+    background-color: @bg-alt;
+    text-color:       @accent;
+}
+
+element-icon {
+    size:       22px;
+    text-color: inherit;
+}
+
+element-text {
+    text-color:     inherit;
+    vertical-align: 0.5;
+}
+
+message {
+    padding:          8px 12px;
+    background-color: @bg-alt;
+    border-radius:    8px;
+}
