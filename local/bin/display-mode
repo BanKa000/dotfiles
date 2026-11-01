@@ -1,0 +1,24 @@
+#!/bin/sh
+# display-mode [extend|mirror|toggle|menu]: how the HDMI TV shows the desktop
+state="$HOME/.config/hypr/display-mode"
+current=$(cat "$state" 2>/dev/null || echo extend)
+
+case "$1" in
+    extend|mirror) mode=$1 ;;
+    toggle) [ "$current" = mirror ] && mode=extend || mode=mirror ;;
+    *)      choice=$(printf 'Второй экран\nДублировать экран ноутбука\n' |
+                     rofi -dmenu -i -p "Телевизор") || exit 0
+            case "$choice" in
+                Второй*)     mode=extend ;;
+                Дублировать*) mode=mirror ;;
+                *)           exit 0 ;;
+            esac ;;
+esac
+
+echo "$mode" > "$state"
+hyprctl reload >/dev/null
+
+case "$mode" in
+    mirror) notify-send "Телевизор" "Дублирует экран ноутбука" ;;
+    *)      notify-send "Телевизор" "Второй экран справа" ;;
+esac

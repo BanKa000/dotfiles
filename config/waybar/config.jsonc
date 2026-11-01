@@ -11,6 +11,8 @@
     ],
     "modules-right": [
         "custom/hotkeys",
+        "custom/tv-display",
+        "custom/tv-audio",
         "cpu",
         "memory",
         "pulseaudio",
@@ -42,6 +44,20 @@
         "exec": "~/.config/waybar/scripts/hotkeys.py",
         "return-type": "json",
         "interval": 30,
+        "tooltip": true
+    },
+    "custom/tv-display": {
+        "exec": "~/.config/waybar/scripts/tv.py display",
+        "on-click": "~/.config/waybar/scripts/tv.py display toggle",
+        "return-type": "json",
+        "interval": 3,
+        "tooltip": true
+    },
+    "custom/tv-audio": {
+        "exec": "~/.config/waybar/scripts/tv.py audio",
+        "on-click": "~/.config/waybar/scripts/tv.py audio toggle",
+        "return-type": "json",
+        "interval": 3,
         "tooltip": true
     },
     "cpu": {

@@ -28,7 +28,7 @@ tooltip {
 }
 
 /* every module is its own island */
-#workspaces, #clock, #custom-hotkeys, #cpu, #memory, #pulseaudio, #network, #language, #battery, #tray {
+#workspaces, #clock, #custom-hotkeys, #custom-tv-display, #custom-tv-audio, #cpu, #memory, #pulseaudio, #network, #language, #battery, #tray {
     background: @bg;
     border-radius: 8px;
     padding: 0 8px;
@@ -89,3 +89,10 @@ tooltip {
 
 #custom-hotkeys       { color: @accent; font-size: 14px; padding: 0 10px; }
 #custom-hotkeys:hover { color: @purple; }
+
+#custom-tv-display, #custom-tv-audio { font-size: 14px; padding: 0 10px; }
+#custom-tv-display        { color: @accent; }
+#custom-tv-display.mirror { color: @purple; }
+#custom-tv-audio.tv       { color: @green; }
+#custom-tv-audio.laptop   { color: @dim; }
+#custom-tv-display:hover, #custom-tv-audio:hover { color: @yellow; }

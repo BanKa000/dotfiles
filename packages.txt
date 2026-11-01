@@ -17,6 +17,7 @@ grim
 slurp
 playerctl
 wireplumber
+libpulse
 pavucontrol
 blueman
 libnotify

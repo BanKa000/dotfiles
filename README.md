@@ -5,10 +5,10 @@
 | Что | Где в репозитории | Куда ставится |
 |---|---|---|
 | Hyprland (конфиг на Lua), hyprlock, hypridle, hyprpaper | `config/hypr/` | `~/.config/hypr/` |
-| Waybar: «островки», модуль с подсказкой горячих клавиш | `config/waybar/` | `~/.config/waybar/` |
+| Waybar: «островки», подсказка горячих клавиш, облака для телевизора | `config/waybar/` | `~/.config/waybar/` |
 | Rofi | `config/rofi/` | `~/.config/rofi/` |
 | Уведомления dunst | `config/dunst/` | `~/.config/dunst/` |
-| Скрипты: скриншоты, история буфера, живые обои | `local/bin/` | `~/.local/bin/` |
+| Скрипты: скриншоты, история буфера, живые обои, режим телевизора | `local/bin/` | `~/.local/bin/` |
 | Обои (обычные и живые), фон экрана блокировки | `wallpapers/` | `~/Pictures/wallpapers/` |
 | Тема GRUB | `system/grub/` | `/boot/grub/themes/tokyonight/` |
 | Тема экрана входа SDDM | `system/sddm/` | `/usr/share/sddm/themes/tokyonight/` |
@@ -39,6 +39,16 @@ yay -S mpvpaper            # живые обои (AUR)
 | Super + Space | раскладка us/ru |
 
 Полный список — в подсказке к значку облака на Waybar: он читается прямо из `hyprland.lua`.
+
+## Телевизор по HDMI
+
+Когда подключён HDMI, на Waybar рядом с подсказками появляются ещё два облака:
+
+- **экран** — клик переключает телевизор между вторым экраном справа и дублированием экрана ноутбука;
+- **звук** — клик переводит звук (вместе с уже играющим) на телевизор и обратно.
+
+Режим экрана запоминается в `~/.config/hypr/display-mode`, его же можно сменить из терминала:
+`display-mode extend|mirror|toggle`. Имена выходов `HDMI-A-1` и `eDP-1` заданы в `hyprland.lua`.
 
 ## Обои
 

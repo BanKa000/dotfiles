@@ -29,6 +29,19 @@ hl.monitor({
     scale    = "auto",
 })
 
+-- TV on HDMI: "extend" or "mirror", switched with ~/.local/bin/display-mode
+local modeFile = io.open(os.getenv("HOME") .. "/.config/hypr/display-mode")
+local displayMode = modeFile and modeFile:read("l") or "extend"
+if modeFile then modeFile:close() end
+
+hl.monitor({
+    output   = "HDMI-A-1",
+    mode     = "1920x1080@60",
+    position = "auto",
+    scale    = 1,
+    mirror   = displayMode == "mirror" and "eDP-1" or nil,
+})
+
 
 ---------------------
 ---- MY PROGRAMS ----
